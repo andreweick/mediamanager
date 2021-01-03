@@ -80,6 +80,41 @@ export const schema = {
                     "type": "ID",
                     "isRequired": true,
                     "attributes": []
+                },
+                "title": {
+                    "name": "title",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "caption": {
+                    "name": "caption",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "dtg_original": {
+                    "name": "dtg_original",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "pixel_height": {
+                    "name": "pixel_height",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "pixel_width": {
+                    "name": "pixel_width",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -119,5 +154,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "3b2b7cf90ac3d804ee49ded0726524a4"
+    "version": "856af90312ec84551c822c6e661a9ec6"
 };

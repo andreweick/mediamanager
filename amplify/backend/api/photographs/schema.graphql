@@ -8,5 +8,10 @@ type Photograph @model @key(name: "byArtist", fields: ["artistsID"]) @auth(rules
   id: ID!
   name: String
   artistsID: ID!
+  title: String
+  caption: String
+  dtg_original: AWSDate
+  pixel_height: String
+  pixel_width: String
 }
- 
+  
