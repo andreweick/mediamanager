@@ -1,10 +1,10 @@
-type Artists @model @auth(rules: [{allow: public}]) {
+type Artist @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
-  Photographs: [Photographs] @connection(keyName: "byArtists", fields: ["id"])
+  Photographs: [Photograph] @connection(keyName: "byArtist", fields: ["id"])
 }
 
-type Photographs @model @auth(rules: [{allow: public}]) @key(name: "byArtists", fields: ["artistsID"]) {
+type Photograph @model @key(name: "byArtist", fields: ["artistsID"]) @auth(rules: [{allow: public}]) {
   id: ID!
   name: String
   artistsID: ID!

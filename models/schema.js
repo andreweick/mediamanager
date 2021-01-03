@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "Artists": {
-            "name": "Artists",
+        "Artist": {
+            "name": "Artist",
             "fields": {
                 "id": {
                     "name": "id",
@@ -21,7 +21,7 @@ export const schema = {
                     "name": "Photographs",
                     "isArray": true,
                     "type": {
-                        "model": "Photographs"
+                        "model": "Photograph"
                     },
                     "isRequired": false,
                     "attributes": [],
@@ -57,8 +57,8 @@ export const schema = {
                 }
             ]
         },
-        "Photographs": {
-            "name": "Photographs",
+        "Photograph": {
+            "name": "Photograph",
             "fields": {
                 "id": {
                     "name": "id",
@@ -92,7 +92,7 @@ export const schema = {
                 {
                     "type": "key",
                     "properties": {
-                        "name": "byArtists",
+                        "name": "byArtist",
                         "fields": [
                             "artistsID"
                         ]
@@ -119,5 +119,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "abc2dfbcd227e3dc74010feb62f5a04d"
+    "version": "3b2b7cf90ac3d804ee49ded0726524a4"
 };
