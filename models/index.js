@@ -4,9 +4,9 @@ import { schema } from './schema';
 
 
 
-const { Artist, Photograph } = initSchema(schema);
+const { Photograph, Author } = initSchema(schema);
 
 export {
-  Artist,
-  Photograph
+  Photograph,
+  Author
 };

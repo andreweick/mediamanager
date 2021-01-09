@@ -20,5 +20,13 @@
         }
       }
     }
+  },
+  "function": {
+    "photo-populate-metadata": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": []
+    }
   }
 }

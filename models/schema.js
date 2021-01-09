@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "Artist": {
-            "name": "Artist",
+        "Photograph": {
+            "name": "Photograph",
             "fields": {
                 "id": {
                     "name": "id",
@@ -17,23 +17,100 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "Photographs": {
-                    "name": "Photographs",
-                    "isArray": true,
-                    "type": {
-                        "model": "Photograph"
-                    },
+                "ExposureTime": {
+                    "name": "ExposureTime",
+                    "isArray": false,
+                    "type": "String",
                     "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": "artistsID"
-                    }
+                    "attributes": []
+                },
+                "FNumber": {
+                    "name": "FNumber",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ISO": {
+                    "name": "ISO",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "DateTimeOriginal": {
+                    "name": "DateTimeOriginal",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ShutterSpeed": {
+                    "name": "ShutterSpeed",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "Title": {
+                    "name": "Title",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "Caption": {
+                    "name": "Caption",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "Height": {
+                    "name": "Height",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "Width": {
+                    "name": "Width",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "GPSLatitude": {
+                    "name": "GPSLatitude",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "GPSLongitude": {
+                    "name": "GPSLongitude",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "GPSAltitude": {
+                    "name": "GPSAltitude",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "hash": {
+                    "name": "hash",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
                 }
             },
             "syncable": true,
-            "pluralName": "Artists",
+            "pluralName": "Photographs",
             "attributes": [
                 {
                     "type": "model",
@@ -57,8 +134,8 @@ export const schema = {
                 }
             ]
         },
-        "Photograph": {
-            "name": "Photograph",
+        "Author": {
+            "name": "Author",
             "fields": {
                 "id": {
                     "name": "id",
@@ -71,67 +148,16 @@ export const schema = {
                     "name": "name",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "artistsID": {
-                    "name": "artistsID",
-                    "isArray": false,
-                    "type": "ID",
                     "isRequired": true,
-                    "attributes": []
-                },
-                "title": {
-                    "name": "title",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "caption": {
-                    "name": "caption",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "dtg_original": {
-                    "name": "dtg_original",
-                    "isArray": false,
-                    "type": "AWSDate",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "pixel_height": {
-                    "name": "pixel_height",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "pixel_width": {
-                    "name": "pixel_width",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
                     "attributes": []
                 }
             },
             "syncable": true,
-            "pluralName": "Photographs",
+            "pluralName": "Authors",
             "attributes": [
                 {
                     "type": "model",
                     "properties": {}
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "byArtist",
-                        "fields": [
-                            "artistsID"
-                        ]
-                    }
                 },
                 {
                     "type": "auth",
@@ -154,5 +180,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "856af90312ec84551c822c6e661a9ec6"
+    "version": "cc3916d0fadb926090e7a9f277ff3f4d"
 };

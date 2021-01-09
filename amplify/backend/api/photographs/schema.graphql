@@ -1,17 +1,23 @@
-type Artist @model @auth(rules: [{allow: public}]) {
+type Photograph @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
-  Photographs: [Photograph] @connection(keyName: "byArtist", fields: ["id"])
+  ExposureTime: String
+  FNumber: String
+  ISO: String
+  DateTimeOriginal: AWSDateTime
+  ShutterSpeed: String
+  Title: String
+  Caption: String
+  Height: Int
+  Width: Int
+  GPSLatitude: String
+  GPSLongitude: String
+  GPSAltitude: String
+  hash: String!
 }
 
-type Photograph @model @key(name: "byArtist", fields: ["artistsID"]) @auth(rules: [{allow: public}]) {
+type Author @model @auth(rules: [{allow: public}]) {
   id: ID!
-  name: String
-  artistsID: ID!
-  title: String
-  caption: String
-  dtg_original: AWSDate
-  pixel_height: String
-  pixel_width: String
+  name: String!
 }
-  
+ 

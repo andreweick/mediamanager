@@ -4,23 +4,29 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
-export declare class Artist {
-  readonly id: string;
-  readonly name: string;
-  readonly Photographs?: (Photograph | null)[];
-  constructor(init: ModelInit<Artist>);
-  static copyOf(source: Artist, mutator: (draft: MutableModel<Artist>) => MutableModel<Artist> | void): Artist;
-}
-
 export declare class Photograph {
   readonly id: string;
-  readonly name?: string;
-  readonly artistsID: string;
-  readonly title?: string;
-  readonly caption?: string;
-  readonly dtg_original?: string;
-  readonly pixel_height?: string;
-  readonly pixel_width?: string;
+  readonly name: string;
+  readonly ExposureTime?: string;
+  readonly FNumber?: string;
+  readonly ISO?: string;
+  readonly DateTimeOriginal?: string;
+  readonly ShutterSpeed?: string;
+  readonly Title?: string;
+  readonly Caption?: string;
+  readonly Height?: number;
+  readonly Width?: number;
+  readonly GPSLatitude?: string;
+  readonly GPSLongitude?: string;
+  readonly GPSAltitude?: string;
+  readonly hash: string;
   constructor(init: ModelInit<Photograph>);
   static copyOf(source: Photograph, mutator: (draft: MutableModel<Photograph>) => MutableModel<Photograph> | void): Photograph;
+}
+
+export declare class Author {
+  readonly id: string;
+  readonly name: string;
+  constructor(init: ModelInit<Author>);
+  static copyOf(source: Author, mutator: (draft: MutableModel<Author>) => MutableModel<Author> | void): Author;
 }
