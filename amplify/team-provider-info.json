@@ -10,6 +10,11 @@
       "StackName": "amplify-mediamanager-dev-152831",
       "StackId": "arn:aws:cloudformation:us-east-1:755248711781:stack/amplify-mediamanager-dev-152831/3fef2370-4e02-11eb-9c50-12136ee127ab",
       "AmplifyAppId": "dmcagh3b77q2e"
+    },
+    "categories": {
+      "auth": {
+        "mediamanagera7a13f3e": {}
+      }
     }
   }
 }

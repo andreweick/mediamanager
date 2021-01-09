@@ -21,5 +21,13 @@
       }
     }
   },
-  "function": {}
+  "function": {},
+  "auth": {
+    "mediamanagera7a13f3e": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
 }
