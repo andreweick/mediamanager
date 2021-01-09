@@ -1,5 +1,137 @@
 export const schema = {
     "models": {
+        "Video": {
+            "name": "Video",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "s3location": {
+                    "name": "s3location",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "authorID": {
+                    "name": "authorID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "Videos",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byAuthor",
+                        "fields": [
+                            "authorID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Audio": {
+            "name": "Audio",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "s3location": {
+                    "name": "s3location",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "authorID": {
+                    "name": "authorID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "Audio",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byAuthor",
+                        "fields": [
+                            "authorID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Photograph": {
             "name": "Photograph",
             "fields": {
@@ -14,6 +146,20 @@ export const schema = {
                     "name": "name",
                     "isArray": false,
                     "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "s3location": {
+                    "name": "s3location",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "authorID": {
+                    "name": "authorID",
+                    "isArray": false,
+                    "type": "ID",
                     "isRequired": true,
                     "attributes": []
                 },
@@ -87,8 +233,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "GPSLongitude": {
-                    "name": "GPSLongitude",
+                "GSPLongitude": {
+                    "name": "GSPLongitude",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -105,7 +251,7 @@ export const schema = {
                     "name": "hash",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": []
                 }
             },
@@ -115,6 +261,15 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byAuthor",
+                        "fields": [
+                            "authorID"
+                        ]
+                    }
                 },
                 {
                     "type": "auth",
@@ -150,6 +305,48 @@ export const schema = {
                     "type": "String",
                     "isRequired": true,
                     "attributes": []
+                },
+                "photographs": {
+                    "name": "photographs",
+                    "isArray": true,
+                    "type": {
+                        "model": "Photograph"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "authorID"
+                    }
+                },
+                "videos": {
+                    "name": "videos",
+                    "isArray": true,
+                    "type": {
+                        "model": "Video"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "authorID"
+                    }
+                },
+                "audios": {
+                    "name": "audios",
+                    "isArray": true,
+                    "type": {
+                        "model": "Audio"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "authorID"
+                    }
                 }
             },
             "syncable": true,
@@ -180,5 +377,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "cc3916d0fadb926090e7a9f277ff3f4d"
+    "version": "b460b3d853ec26d31c7442b03e2cef0c"
 };

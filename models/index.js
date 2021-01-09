@@ -4,9 +4,11 @@ import { schema } from './schema';
 
 
 
-const { Photograph, Author } = initSchema(schema);
+const { Video, Audio, Photograph, Author } = initSchema(schema);
 
 export {
+  Video,
+  Audio,
   Photograph,
   Author
 };

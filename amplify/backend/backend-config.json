@@ -1,6 +1,6 @@
 {
   "api": {
-    "photographs": {
+    "mediamanager": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -21,13 +21,25 @@
       }
     }
   },
-  "function": {},
+  "function": {
+    "mediasort": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "auth": {
     "mediamanagera7a13f3e": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false
+    }
+  },
+  "storage": {
+    "media": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
     }
   }
 }

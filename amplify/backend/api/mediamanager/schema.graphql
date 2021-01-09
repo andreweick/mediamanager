@@ -1,0 +1,42 @@
+type Video @model @auth(rules: [{allow: public}]) @key(name: "byAuthor", fields: ["authorID"]) {
+  id: ID!
+  name: String
+  s3location: String!
+  authorID: ID!
+}
+
+type Audio @model @auth(rules: [{allow: public}]) @key(name: "byAuthor", fields: ["authorID"]) {
+  id: ID!
+  name: String
+  s3location: String!
+  authorID: ID!
+}
+
+type Photograph @model @auth(rules: [{allow: public}]) @key(name: "byAuthor", fields: ["authorID"]) {
+  id: ID!
+  name: String
+  s3location: String!
+  authorID: ID!
+  ExposureTime: String
+  FNumber: String
+  ISO: String
+  DateTimeOriginal: AWSDateTime
+  ShutterSpeed: String
+  Title: String
+  Caption: String
+  Height: Int
+  Width: Int
+  GPSLatitude: String
+  GSPLongitude: String
+  GPSAltitude: String
+  hash: String
+}
+
+type Author @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  photographs: [Photograph] @connection(keyName: "byAuthor", fields: ["id"])
+  videos: [Video] @connection(keyName: "byAuthor", fields: ["id"])
+  audios: [Audio] @connection(keyName: "byAuthor", fields: ["id"])
+}
+ 
