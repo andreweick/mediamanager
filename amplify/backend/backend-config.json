@@ -26,6 +26,11 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "tshellowworld": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "auth": {
@@ -43,7 +48,7 @@
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "process",
+          "resourceName": "tshellowworld",
           "attributes": [
             "Name",
             "Arn",
