@@ -69,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-mediamanager-dev-152831-deployment",
-          "S3Key": "amplify-builds/tshellowworld-486658484d44366c4941-build.zip"
+          "S3Key": "amplify-builds/tshellowworld-5a4a48464a3470522f55-build.zip"
         }
       }
     },
